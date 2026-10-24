@@ -1,0 +1,12 @@
+{
+  "name": "solana-memecoin-bot-v8-fixed",
+  "version": "1.0.0",
+  "description": "Solana memecoin paper trading dashboard",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
