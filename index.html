@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Solana Memecoin Bot V8</title>
+</head>
+<body>
+  <h1>Solana Memecoin Bot V8</h1>
+  <p id="status">Menghubungkan ke server...</p>
+
+  <script>
+    async function updateStatus() {
+      try {
+        const response = await fetch("/api/status");
+        const data = await response.json();
+
+        document.getElementById("status").textContent =
+          "Status: " + data.status +
+          " | Mode: " + data.mode +
+          " | Saldo simulasi: $" + Number(data.cash).toFixed(2);
+      } catch (error) {
+        document.getElementById("status").textContent =
+          "Gagal menghubungi server.";
+      }
+    }
+
+    updateStatus();
+    setInterval(updateStatus, 10000);
+  </script>
+</body>
+</html>
